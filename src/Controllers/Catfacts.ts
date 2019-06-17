@@ -8,7 +8,8 @@ import dictionary from '../dictionary';
 enum Command {
   Help = 'help',
   Unsubscribe = 'unsubscribe',
-  Cancel = 'cancel'
+  Cancel = 'cancel',
+  Snowden = 'snowden'
 }
 
 class Catfacts {
@@ -31,8 +32,6 @@ class Catfacts {
     let options = text.split(' ');
     let response: SlackResponse;
 
-    console.log(options);
-
     let command = '';
     if (options[0]) {
       command = options[0].toLowerCase().trim();
@@ -41,38 +40,30 @@ class Catfacts {
     switch (command) {
       case Command.Help:
       response = {
-        text: this.getHelp(),
+        text: this.parser.recursiveslyParse(`[help]`),
         response_type: "ephemeral"
       };
         break;
       case Command.Unsubscribe:
       case Command.Cancel:
         response = {
-          text: this.getCancel(),
+          text: this.parser.recursiveslyParse(`[cancel]`),
           response_type: "ephemeral"
+        };
+        break;
+      case Command.Snowden:
+        response = {
+          text: this.parser.recursiveslyParse(`[snowden]`),
+          response_type: "in_channel"
         };
         break;
       default:
         response = {
-          text: this.getCatFacts(),
+          text: this.parser.recursiveslyParse(`[facts|quotes]`),
           response_type: "in_channel"
         };
     }
     res.json(response);
-  }
-
-  getCatFacts (): string {
-    const factNumber = randomInt(1, 10000);
-    const fact = this.parser.recursiveslyParse(`[facts]`);
-    return `*Cat Fact #${factNumber}:* ${fact}`
-  }
-
-  getHelp (): string {
-    return this.parser.recursiveslyParse(`[help]`);
-  }
-
-  getCancel (): string {
-    return this.parser.recursiveslyParse(`[cancel]`);
   }
 
 }
