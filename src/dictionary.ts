@@ -3,7 +3,7 @@ const dictionary = {
     'Cats were not responsible for [depressingEvents]. Think about that for a minute.',
     'Cats are great for combatting the utter futility of the human condition.',
     'Cats sleep a lot because they realize the darkness of life.',
-    'Cats will never betray or [thingThatPeopleDid].',
+    'Cats will never betray you or [thingThatPeopleDid].',
     'Cats are very soft and cuddly and do not commit police brutality.',
     'Cats cannot run [badPlaces]. Silly cats!',
     'Meow, meow: {terribleWords}!',
@@ -87,7 +87,8 @@ const dictionary = {
     'justify torture as \"enhanced interrogation\"'
   ],
   snowden: [
-    '>>> Yossarian was cold, too, and shivering uncontrollably. He felt goose pimples clacking all over him as he gazed down despondently at the grim secret Snowden had spilled all over the messy floor. It was easy to read the message in his entrails. Man was matter, that was Snowden’s secret. Drop him out a window and he’ll fall. Set fire to him and he’ll burn. Bury him and he’ll rot, like other kinds of garbage. That was Snowden’s secret. Ripeness was all.'
+    '>>> Yossarian was cold, too, and shivering uncontrollably. He felt goose pimples clacking all over him as he gazed down despondently at the grim secret Snowden had spilled all over the messy floor. It was easy to read the message in his entrails. Man was matter, that was Snowden’s secret. Drop him out a window and he’ll fall. Set fire to him and he’ll burn. Bury him and he’ll rot, like other kinds of garbage. That was Snowden’s secret. Ripeness was all.',
+    '>>> The world breaks everyone and afterward many are strong at the broken places. But those that will not break it kills. It kills the very good and the very gentle and the very brave impartially. If you are none of these you can be sure it will kill you too but there will be no special hurry.' 
   ]
 };
 
